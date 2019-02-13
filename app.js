@@ -1,9 +1,16 @@
-var app = require('express')();
-var quote = require('./quote.json');
+const express = require('express');
+const app = express();
+const quote = require('./quote.json');
 
 app.set('port', process.env.PORT || 5000)
 
-.get('/all-quote', (req, res) => {
+.use(express.static(__dirname + "/public"))
+
+.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
+})
+
+.get('/all-quotes', (req, res) => {
   res.json(quote);
 })
 
