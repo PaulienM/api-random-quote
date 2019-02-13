@@ -1,7 +1,9 @@
 var app = require('express')();
 var quote = require('./quote.json');
 
-app.get('/all-quote', (req, res) => {
+app.set('port', process.env.PORT || 5000)
+
+.get('/all-quote', (req, res) => {
   res.json(quote);
 })
 
@@ -24,4 +26,6 @@ app.get('/all-quote', (req, res) => {
   res.json(quote[id]);
 });
 
-app.listen(8080);
+app.listen(app.get('port'), () => {
+  console.log('Node app is running on port', app.get('port'));
+});
