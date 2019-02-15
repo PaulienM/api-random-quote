@@ -4,6 +4,8 @@ const quote = require('./quote.json');
 
 app.set('port', process.env.PORT || 5000)
 
+.use(require('access-control')({origins: *}));
+
 .use(express.static(__dirname + "/public"))
 
 .get('/', (req, res) => {
