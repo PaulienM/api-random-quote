@@ -2,7 +2,8 @@
 	"name": "api-get-quote",
 	"version": "0.1.0",
 	"dependencies": {
-		"express": "~4.16.0"
+		"express": "~4.16.0",
+		"cors": "~2.8.5"
 	},
 	"main": "app.js",
 	"scripts": {
