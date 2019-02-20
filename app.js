@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const quote = require('./quote.json');
+var cors = require('cors');
 
 app.set('port', process.env.PORT || 5000)
+
+
+.use(cors({optionSuccessStatus: 200}))
 
 .use(express.static(__dirname + "/public"))
 
